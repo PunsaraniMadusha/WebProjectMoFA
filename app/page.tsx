@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center font-sans">
       
-      {/* Background Image */}
+      {/* Background Image Section */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/assets/welcome.jpeg" 
@@ -38,7 +38,8 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
+        {/* LIGHTER OVERLAY: Reduced opacity from 70% to 30/40% for a clearer image */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/50" />
       </div>
 
       {/* Primary Content Wrapper */}
@@ -46,21 +47,21 @@ export default function Home() {
         
         {/* 1. Greeting Section */}
         <div className="flex flex-col items-center mb-8 md:mb-12">
-          <h1 className="text-xl md:text-4xl font-light tracking-widest flex gap-4 md:gap-10 items-center">
-            <span className="drop-shadow-2xl">ආයුබෝවන්</span>
-            <span className="drop-shadow-2xl">வரவேற்பு</span>
-            <span className="font-serif italic drop-shadow-2xl">welcome</span>
+          {/* Added stronger drop-shadows to ensure text is readable against a brighter image */}
+          <h1 className="text-xl md:text-4xl font-light tracking-widest flex gap-4 md:gap-10 items-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+            <span>ආයුබෝවන්</span>
+            <span>வரவேற்பு</span>
+            <span className="font-serif italic">welcome</span>
           </h1>
           <div className="mt-4 w-48 md:w-64 h-px bg-gradient-to-r from-transparent via-yellow-500 to-transparent relative">
             <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 text-yellow-500 text-sm drop-shadow-md">✦</div>
           </div>
         </div>
 
-        {/* 2. Central Ministry Identity Section (GRID FIX) */}
-        {/* Desktop: 3-column grid. Mobile: Stacked layout */}
+        {/* 2. Central Ministry Identity Section */}
         <div className="flex flex-col md:grid md:grid-cols-[140px_1fr_160px] lg:grid-cols-[180px_1fr_220px] items-center w-full mb-12 md:mb-16 gap-6 md:gap-6">
           
-          {/* Top (Mobile) / Left (Desktop): National Emblem */}
+          {/* National Emblem */}
           <div className="relative aspect-square w-24 sm:w-32 md:w-full drop-shadow-2xl">
             <Image 
               src="/assets/logo.png" 
@@ -70,12 +71,12 @@ export default function Home() {
             />
           </div>
 
-          {/* Center: Trilingual Title */}
-          <div className="flex flex-col items-center text-center space-y-2 md:space-y-3 drop-shadow-2xl min-w-0 px-2 order-3 md:order-2">
+          {/* Center: Trilingual Title - Enhanced shadows for readability */}
+          <div className="flex flex-col items-center text-center space-y-2 md:space-y-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] min-w-0 px-2 order-3 md:order-2">
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight">
               විදේශ කටයුතු, විදේශ රැකියා සහ සංචාරක අමාත්‍යාංශය
             </p>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium opacity-90 leading-tight">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium opacity-100 leading-tight">
               வெளிநாட்டு அலுவல்கள், வெளிநாட்டு வேலைவாய்ப்பு மற்றும் சுற்றுலாத்துறை அமைச்சு
             </p>
             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold tracking-tighter uppercase leading-tight">
@@ -83,13 +84,13 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* Bottom (Mobile) / Right (Desktop): National Flag */}
+          {/* National Flag */}
           <div className="relative aspect-[2/1] w-32 sm:w-40 md:w-full drop-shadow-2xl order-2 md:order-3">
             <Image 
               src="/assets/flag.png" 
               alt="Sri Lanka Flag" 
               fill 
-              className="object-contain border border-white/10"
+              className="object-contain border border-white/20"
             />
           </div>
         </div>
@@ -100,7 +101,7 @@ export default function Home() {
             <Link 
               key={index} 
               href={section.link}
-              className="group relative bg-white/95 hover:bg-white transition-all duration-500 
+              className="group relative bg-white/90 hover:bg-white transition-all duration-500 
                          rounded-tr-[30px] rounded-bl-[30px] md:rounded-tr-[40px] md:rounded-bl-[40px] border-b-[6px] md:border-b-[8px] border-blue-900
                          p-6 md:p-10 lg:p-12 flex flex-col items-center justify-center text-blue-950 shadow-2xl 
                          hover:scale-105 active:scale-95"
@@ -118,7 +119,7 @@ export default function Home() {
       </div>
 
       {/* 4. Footer */}
-      <footer className="absolute bottom-6 w-full text-center text-white/70 text-[10px] md:text-xs tracking-widest uppercase">
+      <footer className="absolute bottom-6 w-full text-center text-white font-medium text-[10px] md:text-xs tracking-widest uppercase drop-shadow-md">
         © 2026 Ministry of Foreign Affairs, Sri Lanka • Secure Government Portal
       </footer>
     </main>
