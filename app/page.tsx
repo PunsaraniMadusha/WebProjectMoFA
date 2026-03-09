@@ -32,7 +32,7 @@ export default function Home() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/new.jpeg" 
+          src="/assets/welcome.jpeg" 
           alt="Sri Lanka Landscape"
           fill
           className="object-cover"
