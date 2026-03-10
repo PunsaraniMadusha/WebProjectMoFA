@@ -4,7 +4,7 @@ import DownloadAccordion from '@/components/DownloadAccordion';
 const downloadItems = [
   {
     title: 'National Anthem',
-    fileUrl: '/downloads/national-anthem.mp3',
+    fileUrl: '/downloads/anthem.mp3',
   },
   {
     title: 'National Emblem of Sri Lanka',
@@ -20,7 +20,7 @@ const downloadItems = [
   },
   {
     title: 'Procurement Document',
-    fileUrl: '/downloads/procurement-document.pdf',
+    fileUrl: '/downloads/Procument.pdf',
   },
 ];
 
