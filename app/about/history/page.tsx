@@ -839,10 +839,12 @@ export default function HistoryPage() {
               }`}
             >
               {/* Year */}
-              <div className="w-full md:w-1/2 px-6">
-                <span className="text-2xl font-bold text-sky-700">
-                  {item.year}
-                </span>
+              <div className={`w-full md:w-1/2 px-6 ${
+                               item.side === "right" ? "md:text-right" : "md:text-left"
+                          }`}>
+              <span className="text-2xl font-bold text-sky-700">
+                            {item.year}
+              </span>
               </div>
 
               {/* Circle Icon */}
