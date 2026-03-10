@@ -41,31 +41,36 @@ export default function Page() {
         return (
           <>
             <p className="mb-4">
-              The Ministry of Foreign Affairs, Foreign Employment and Tourism
-              coordinates and carries out the foreign policy of the Government
-              of Sri Lanka.
+              The Ministry of Foreign Affairs, 
+              Foreign Employment and Tourism coordinates and carries out the foreign policy of the Government of Sri Lanka.
+               The Ministry consists of the Ministry headquarters in Colombo and Sri Lanka Missions abroad.
             </p>
             <p>
-              The Ministry was formally established in 1948 following the
-              independence of Ceylon.
+            The Ministry was formally established in 1948 following the independence of
+             Ceylon as the Ministry of External Affairs and Defence, 
+             coming under the direct control of the Prime Minister of Ceylon. 
+             In 1977, the government divided the ministry in two, forming the Ministry of Defence and the Ministry of Foreign Affairs. 
+              A.C.S Hameed was appointed as the first Minister of Foreign Affairs on 4 February 1978. 
+
+              
             </p>
           </>
         );
       case "Vision":
         return (
           <div className="flex flex-col items-center justify-center text-center py-6 md:py-12 space-y-4 md:space-y-6">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#2B6CB0]">Vision</h2>
             <p className="text-[#2B6CB0] text-lg md:text-2xl max-w-3xl leading-relaxed">
-              To be a responsible nation within the international community.
+              To be a responsible nation within the international community and to maintain friendly realation with all countries.
             </p>
           </div>
         );
       case "Mission":
         return (
           <div className="flex flex-col items-center justify-center text-center py-6 md:py-12 space-y-4 md:space-y-6">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#2B6CB0]">Mission</h2>
             <p className="text-[#2B6CB0] text-lg md:text-2xl max-w-4xl leading-relaxed">
-              The promotion, projection, and protection of Sri Lanka&apos;s national interests.
+             The promotion, projection and protection of Sri Lanka’s national interests internationally, 
+             in accordance with the foreign policy of the Government and to advise the Government on international 
+             developments which affect Sri Lanka.
             </p>
           </div>
         );
