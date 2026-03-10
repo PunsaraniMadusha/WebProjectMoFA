@@ -8,11 +8,11 @@ const downloadItems = [
   },
   {
     title: 'National Emblem of Sri Lanka',
-    fileUrl: '/downloads/national-emblem.pdf',
+    fileUrl: '/downloads/Emblem.png',
   },
   {
     title: 'National Flag of Sri Lanka',
-    fileUrl: '/downloads/national-flag.pdf',
+    fileUrl: '/downloads/flag.png',
   },
   {
     title: 'IORA Images Downloader',
