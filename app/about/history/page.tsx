@@ -819,67 +819,72 @@ export default function HistoryPage() {
   ];
  
   return (
-    <main className="container mx-auto px-4 py-10">
-      {/* Page Title */}
-      <h1 className="text-3xl font-bold border-b-4 border-yellow-500 inline-block pb-2 mb-10">
-        History of the Ministry
-      </h1>
+  <main className="container mx-auto px-4 py-10">
+    {/* Page Title */}
+    <h1 className="text-3xl font-bold border-b-4 border-yellow-500 inline-block pb-2 mb-10">
+      History of the Ministry
+    </h1>
 
-      {/* Timeline */}
-      <div className="relative">
-        {/* Vertical Line */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-sky-500 h-full" />
+    {/* Timeline */}
+    <div className="relative">
+      {/* Vertical Line */}
+      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-sky-500 h-full" />
 
-        <div className="space-y-12">
-          {timelineData.map((item, index) => (
+      <div className="space-y-12">
+        {timelineData.map((item, index) => (
+          <div
+            key={index}
+            className={`flex flex-col md:flex-row items-center w-full relative ${
+              item.side === "left" ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            {/* Year */}
             <div
-              key={index}
-              className={`flex flex-col md:flex-row items-center w-full relative ${
-                item.side === "left" ? "md:flex-row-reverse" : ""
+              className={`w-full md:w-1/2 px-6 ${
+                item.side === "right" ? "md:text-right" : "md:text-left"
               }`}
             >
-              {/* Year */}
-              <div className={`w-full md:w-1/2 px-6 ${
-                               item.side === "right" ? "md:text-right" : "md:text-left"
-                          }`}>
               <span className="text-2xl font-bold text-sky-700">
-                            {item.year}
+                {item.year}
               </span>
-              </div>
+            </div>
 
-              {/* Circle Icon */}
-              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full border-4 border-sky-500 bg-white items-center justify-center z-10">
-                <Flag className="w-6 h-6 text-sky-600" />
-              </div>
+            {/* Circle Icon */}
+            <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full border-4 border-sky-500 bg-white items-center justify-center z-10">
+              <Flag className="w-6 h-6 text-sky-600" />
+            </div>
 
-              {/* Card */}
-              <div className="w-full md:w-1/2 px-6 mt-4 md:mt-0">
-                <div className="bg-sky-50 rounded-xl shadow-md overflow-hidden border border-sky-100">
-                  <div className="bg-blue-900 text-white p-4">
-                    <h3 className="font-bold text-lg">{item.title}</h3>
+            {/* Card */}
+            <div className="w-full md:w-1/2 px-6 mt-4 md:mt-0">
+              <div className="bg-sky-50 rounded-xl shadow-md overflow-hidden border border-sky-100">
+                <div className="bg-blue-900 text-white p-4">
+                  <h3 className="font-bold text-lg">{item.title}</h3>
+                </div>
+
+                <div className="p-4 flex flex-col sm:flex-row gap-4">
+                  {item.image && (
+                    <div className="relative w-32 h-24 flex-shrink-0">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  )}
+
+                  {/* FIXED PART */}
+                  <div className="text-gray-700 text-sm leading-relaxed">
+                    {item.description}
                   </div>
 
-                  <div className="p-4 flex flex-col sm:flex-row gap-4">
-                    {item.image && (
-                      <div className="relative w-32 h-24 flex-shrink-0">
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          fill
-                          className="object-contain"
-                        />
-                      </div>
-                    )}
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </main>
-  );
+    </div>
+  </main>
+);
 }
